@@ -5,14 +5,14 @@ import { CountableTag, Repository } from "../../types";
 import data from "../../generated.json"
 
 export default function Language(
-  {repositories, 
-    tag, 
-    languages} : 
-  {
-    repositories: Repository[];
-    tag: string,
-    languages: CountableTag[];
-  }
+  { repositories,
+    tag,
+    languages }:
+    {
+      repositories: Repository[];
+      tag: string,
+      languages: CountableTag[];
+    }
 ) {
 
   const language = languages.find((language) => language.id == tag);
@@ -29,24 +29,23 @@ export default function Language(
     </>
   );
 }
-
 // Indicate which paths should be created on build time
 export async function getStaticPaths() {
   return {
     paths: [
       {
-        params: { tag: 'go'},
+        params: { tag: 'go' },
       },
       {
-        params: { tag: 'java'},
+        params: { tag: 'java' },
       },
       {
-        params: { tag: 'javascript'},
+        params: { tag: 'javascript' },
       },
       {
-        params: { tag: 'python'},
+        params: { tag: 'python' },
       },
-    ], 
+    ],
     fallback: false,
   }
 }
