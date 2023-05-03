@@ -2,7 +2,8 @@ import Head from "next/head";
 
 import { RepositoryList } from "../../components/RepositoryList";
 import { CountableTag, Repository } from "../../types";
-import data from "../../generated.json"
+
+import data from "../../order.json";
 
 export default function Language(
   { repositories,
@@ -22,9 +23,9 @@ export default function Language(
     <>
       <Head>
         <title>{pageTitle}</title>
-      </Head>
+        </Head>
       <RepositoryList
-        repositories={repositories.filter((repository) => repository.language.id == tag)}
+        repositories={repositories.filter((repository) => repository.language.id == tag)} dtOrder={data.date} starOrder={data.star}
       />
     </>
   );

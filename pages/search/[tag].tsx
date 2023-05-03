@@ -5,6 +5,8 @@ import { RepositoryList } from "../../components/RepositoryList";
 import { CountableTag } from "../../types";
 import { useAppContext } from "../_app";
 
+import dataOrder from "../../order.json";
+
 export default function Language() { /* Acho que está a funcionar, tenho de criar uma searchBar para redirecionar para aqui */
   const { repositories, languages, topics } = useAppContext();
 
@@ -31,7 +33,7 @@ export default function Language() { /* Acho que está a funcionar, tenho de cri
       <Head>
         <title>{pageTitle}</title>
       </Head>
-      <RepositoryList repositories={queriedRepositories} />
+      <RepositoryList repositories={queriedRepositories} dtOrder={dataOrder.date} starOrder={dataOrder.star} />
       {/* {queriedLanguages} */}
       {/* {queriedTopics} */}
     </>
