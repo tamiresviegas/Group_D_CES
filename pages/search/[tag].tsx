@@ -7,7 +7,7 @@ import { useAppContext } from "../_app";
 
 import dataOrder from "../../order.json";
 
-export default function Language() { /* Acho que está a funcionar, tenho de criar uma searchBar para redirecionar para aqui */
+export default function Language() {
   const { repositories, languages, topics } = useAppContext();
 
   const router = useRouter();
